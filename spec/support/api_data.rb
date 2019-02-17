@@ -1,6 +1,6 @@
 RSpec.configure do |config|
-    config.before(:each) do   
-      stub_request(:get, /currencydatafeed.com/ )
+    config.before(:each) do #antes de qualquer chamada
+      stub_request(:get, /currencydatafeed.com/ ) #qualquer chamada pra essa url cai aqui
       .with(headers: {
         'Accept'=>'*/*'
       }).to_return(status: 200, body: '
